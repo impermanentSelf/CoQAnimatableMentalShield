@@ -11,6 +11,7 @@ public static class AnimatePatch{
     public static bool MyAnimate(GameObject frankenObject, GameObject Actor=null, GameObject Using=null){
         if (frankenObject.HasPart("MentalShield")){
             frankenObject.RemovePart("MentalShield");
+            frankenObject.RequirePart<Sapient>();
 
             frankenObject.PlayWorldSound("Sounds/Interact/sfx_interact_sentience_imbue");
             Popup.Show("You grant " + frankenObject.t() + " the gift of Sapience.");
@@ -19,17 +20,16 @@ public static class AnimatePatch{
 
             return true;
         }
+        Popup.ShowFail("You can't animate an object that already has a brain.");
         return false;
     }
 
-
-
-    [HarmonyPatch(typeof(GameObject),nameof(GameObject.HasTagOrProperty))]
+    /*[HarmonyPatch(typeof(GameObject),nameof(GameObject.HasTagOrProperty))]
     static void Postfix(ref bool __result, ref GameObject __instance, ref String Name){
         if (!__result){
             __result = (Name == "Animatable" && __instance.HasPart("MentalShield"));
         }
-    }
+    */}
     [HarmonyPatch(typeof(AnimatorSpray),nameof(AnimatorSpray.HandleEvent))]
     static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator){
         CodeMatcher codeMatcher = new CodeMatcher(instructions, generator);
@@ -49,8 +49,8 @@ public static class AnimatePatch{
             new CodeInstruction(OpCodes.Ldarg_1), // Event argument
             CodeInstruction.LoadField(typeof(InventoryActionEvent), "Actor"), //should be E.Actor
             new CodeInstruction(OpCodes.Ldarg_0), // this
-            CodeInstruction.LoadField(typeof(IPart), "_ParentObject"), // this.get_ParentObject()
-            CodeInstruction.Call(typeof(AnimatePatch), nameof(AnimatePatch.MyAnimate)/*, [typeof(GameObject), typeof(GameObject), typeof(GameObject)]*/) // AnimateObject.Animate(gameObject, E.Actor, ParentObject);
+            CodeInstruction.LoadField(typeof(IPart), "_ParentObject"), // this._ParentObject()
+            CodeInstruction.Call(typeof(AnimatePatch), nameof(AnimatePatch.MyAnimate)) // AnimateObject.Animate(gameObject, E.Actor, ParentObject);
         );
         return codeMatcher.InstructionEnumeration();
     }
