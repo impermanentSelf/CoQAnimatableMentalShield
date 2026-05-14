@@ -29,7 +29,7 @@ public static class AnimatePatch{
         if (!__result){
             __result = (Name == "Animatable" && __instance.HasPart("MentalShield"));
         }
-    */}
+    }*/
     [HarmonyPatch(typeof(AnimatorSpray),nameof(AnimatorSpray.HandleEvent))]
     static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator){
         CodeMatcher codeMatcher = new CodeMatcher(instructions, generator);

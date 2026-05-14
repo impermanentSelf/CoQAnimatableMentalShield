@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <objects>
     <object Name="BaseOoze" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="Robot" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="MutatedPlant" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="SapientMutatedBush" Load="Merge">
-        <removepart Name="Animatable" />
+        <removetag Name="Animatable" />
     </object>
     <object Name="SapientMutatedSucculent" Load="Merge">
-        <removepart Name="Animatable" />
+        <removetag Name="Animatable" />
     </object>
     <object Name="SapientMutatedFlower" Load="Merge">
-        <removepart Name="Animatable" />
+        <removetag Name="Animatable" />
     </object>
     <object Name="SapientMutatedVine" Load="Merge">
-        <removepart Name="Animatable" />
+        <removetag Name="Animatable" />
     </object>
     <object Name="SapientMutatedTree" Load="Merge">
-        <removepart Name="Animatable" />
+        <removetag Name="Animatable" />
     </object>
     <object Name="MutatedFungus" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="SapientMutatedFungus" Load="Merge">
-        <removepart Name="Animatable" />
+        <removetag Name="Animatable" />
     </object>
     <object Name="BaseNest" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="Girshworm" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
 
     <object Name="Twinning Lamprey" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="Baetyl" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
 
     <object Name="Trining Lamprey" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
 
     <object Name="Dawning Ape" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="Plant Turret" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
 
     <object Name="CherubimSpawn4A" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="CherubimSpawn4B" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="CherubimSpawn5A" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="CherubimSpawn5B" Load="Merge">
-        <part Name="Animatable" />
+        <tag Name="Animatable" />
     </object>
     <object Name="BaseNephal" Load="Merge">
-        <removepart Name="Animatable" />
+        <removetag Name="Animatable" />
     </object>
     <object Name="BaseVehicleGolem" Load="Merge">
-        <removepart Name="Animatable" Depth="1" />
+        <removetag Name="Animatable" Depth="1" />
     </object>
 
 
