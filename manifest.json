@@ -1,0 +1,9 @@
+{
+    "id": "animatable_mentalshield",
+    "title": "Animatable Mental Shield",
+    "description": "Spray-a-Brain and nano-neuro animator can make non-sapient creatures sapient, allowing them to be affected by certain mental attacks",
+    "version": "1.0.0",
+    "author": "impermanentSelf",
+    "tags": "Item,Creature",
+    "PreviewImage": "preview.png"
+}

@@ -1,0 +1,8 @@
+{
+  "WorkshopId": 3726007165,
+  "Title": "Animatable Mental Shield",
+  "Description": "allows Spray-a-Brain and nano-neuro animator to grant sapience to non-sapient creatures like oozes, robots, and plants. it removes their mental shield, which allows for certain mental attacks to be able to hit them",
+  "Tags": "Item,Creature",
+  "Visibility": "2",
+  "ImagePath": "preview.png"
+}
