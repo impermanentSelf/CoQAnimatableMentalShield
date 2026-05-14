@@ -10,13 +10,13 @@ using XRL.World.Parts;
 public static class AnimatePatch{
     public static bool MyAnimatorSpray(GameObject frankenObject, GameObject Actor=null, GameObject Using=null){
         if (frankenObject.HasPart("MentalShield")){
-            frankenObject.RemovePart("MentalShield");
-            frankenObject.RequirePart<Sapient>();
 
             frankenObject.PlayWorldSound("Sounds/Interact/sfx_interact_sentience_imbue");
             Popup.Show("You grant " + frankenObject.t() + " the gift of Sapience.");
             CombatJuice.playPrefabAnimation(frankenObject, "Abilities/AbilityVFXAnimated", frankenObject.ID, frankenObject.Render.Tile + ";" + frankenObject.Render.GetTileForegroundColor() + ";" + frankenObject.Render.getDetailColor());
             AnimateEvent.Send(Actor, frankenObject, Using);
+            frankenObject.RemovePart("MentalShield");
+            frankenObject.RequirePart<Sapient>();
             Using?.Destroy();
 
             return true;
@@ -28,9 +28,6 @@ public static class AnimatePatch{
 
     public static void MyNanoAnimator(GameObject frankenObject, InventoryActionEvent E=null, GameObject Using=null){
         if (frankenObject.HasPart("MentalShield")){
-            frankenObject.RemovePart("MentalShield");
-            frankenObject.RequirePart<Sapient>();
-
             E.Actor.UseEnergy(1000, "Item Animate");
             frankenObject.PlayWorldSound("Sounds/Interact/sfx_interact_sentience_imbue");
             if (E.Actor.IsPlayer())
@@ -39,6 +36,8 @@ public static class AnimatePatch{
             }
 
             AnimateEvent.Send(E.Actor, frankenObject, Using);
+            frankenObject.RemovePart("MentalShield");
+            frankenObject.RequirePart<Sapient>();
             E.RequestInterfaceExit();
         } else{
             Popup.ShowFail("You can't animate an object that already has a brain.");
